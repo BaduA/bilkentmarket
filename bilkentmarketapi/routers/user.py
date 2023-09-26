@@ -44,7 +44,7 @@ def create_user(user: schemas.UserCreate, db: Session = Depends(database.get_db)
 
 
 @router.put("/changePsw")
-def change_psw(
+def change_password(
     chg_psw: schemas.ChangePsw,
     db: Session = Depends(database.get_db),
     current_user=Depends(oauth2.get_current_user),
