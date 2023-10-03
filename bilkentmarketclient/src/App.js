@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { QueryClientProvider, QueryClient } from "react-query";
+import { Route, Routes, Redirect, Navigate } from "react-router-dom";
+import Login from "./components/Auth/Login";
+import Register from "./components/Auth/Register";
+import Loading from "./components/CommonComponents/Loading";
+import AppLayout from "./AppLayout";
+import Homepage from "./components/Homepage/Homepage";
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      refetchOnmount: false,
+      refetchOnReconnect: false,
+      retry: false,
+    },
+  },
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <Routes>
+        <Route path="/login" element={<Login></Login>} />
+        <Route path="/register" element={<Register></Register>} />
+        <Route path="/loading" element={<Loading></Loading>} />
+        <Route element={<AppLayout></AppLayout>}>
+          <Route path="/" element={<Homepage></Homepage>}></Route>
+          <Route path="*" element={<Homepage></Homepage>}></Route>
+        </Route>
+      </Routes>
+    </QueryClientProvider>
   );
 }
 

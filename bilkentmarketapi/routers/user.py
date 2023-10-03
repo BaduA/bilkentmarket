@@ -7,7 +7,6 @@ from sqlalchemy.orm import Session
 from utlils import hash, verify
 from . import oauth2
 from validate_email import validate_email
-import requests
 
 router = APIRouter(prefix="/users", tags=["users"])
 
@@ -43,7 +42,7 @@ def create_user(user: schemas.UserCreate, db: Session = Depends(database.get_db)
     return new_user
 
 
-@router.put("/changePsw")
+@router.put("/change_psw")
 def change_password(
     chg_psw: schemas.ChangePsw,
     db: Session = Depends(database.get_db),
@@ -60,6 +59,18 @@ def change_password(
             status_code=status.HTTP_406_NOT_ACCEPTABLE,
             detail="old password not matching",
         )
+
+
+@router.put("/update")
+def update_user(
+    user: schemas.UserCreate,
+    db: Session = Depends(database.get_db),
+    current_user=Depends(oauth2.get_current_user),
+):
+    userQuery = db.query(models.User).filter(models.User.id == current_user.id)
+    userQuery.update(user)
+    db.commit()
+    return userQuery.first()
 
 
 @router.put("/changeUsername/{newUsername}")
@@ -90,4 +101,3 @@ def get_user(id: int, db: Session = Depends(database.get_db)):
     if not user:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="not found")
     return user
-

@@ -8,7 +8,7 @@ from fastapi.security.oauth2 import OAuth2PasswordRequestForm
 router = APIRouter(tags=["Authentication"])
 
 
-@router.post("/login",response_model=schemas.Token)
+@router.post("/login", response_model=schemas.Token)
 def login(
     user_creds: OAuth2PasswordRequestForm = Depends(),
     db: Session = Depends(database.get_db),
@@ -18,9 +18,21 @@ def login(
     )
 
     if not user:
-        raise HTTPException(
-            status_code=status.HTTP_403_FORBIDDEN, detail="No emails matched"
+        user = (
+            db.query(models.User)
+            .filter(models.User.phone_num == user_creds.username)
+            .first()
         )
+        if not user:
+            user = (
+                db.query(models.User)
+                .filter(models.User.id == user_creds.username)
+                .first()
+            )
+            if not user:
+                raise HTTPException(
+                    status_code=status.HTTP_403_FORBIDDEN, detail="No users matched"
+                )
 
     isUser = utlils.verify(user_creds.password, user.password)
 

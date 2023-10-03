@@ -1,13 +1,79 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: black;
+  height: 100%;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+* {
+  box-sizing: border-box;
+}
+.flexAllContainer{
+  width: 100%;
+  min-height: 100vh;
+  background-color: #232323;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.flexContainer {
+  width: 100%;
+  min-height: 88vh;
+  background-color: #232323;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.goBack {
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+}
+.goBack svg {
+  transition: all 0.4s;
+}
+.goBack svg:hover {
+  color: aqua;
+}
+input:focus {
+  outline: none;
+}
+h4 {
+  color: black;
+}
+h3 {
+  color: black;
+}
+h2 {
+  color: black;
+}
+h1 {
+  color: black;
+}
+button{
+  cursor: pointer;
+}
+a{
+  text-decoration: none;
+  color: #007DFF;
+}
+button{
+  border: none;
+}
+input:focus{
+  outline: 1px solid #007DFF;
 }

@@ -1,0 +1,138 @@
+#registerNavbar {
+  height: 10vh;
+  background-color: #f1f1f1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+}
+#brand {
+  height: 100%;
+  width: 15%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#brand p {
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+#registerContainer {
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+#registerFormContainer {
+  width: 35%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#registerFormContainer h2 {
+  font-size: 35px;
+  font-weight: 400;
+}
+#registerFormContainer form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+#registerFormContainer form input {
+  width: 100%;
+  margin: 20px 0;
+  padding: 16px;
+  background-color: #F2F2F2;
+  border: none;
+  border-radius: 10px;
+}
+#registerFormContainer form button{
+  width: 45%;
+  padding: 15px;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: rgb(241, 59, 59);
+  color: white;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+#loginContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0;
+  width: 100%;
+}
+#loginFormContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 70%;
+}
+#loginFormContainer h2{
+  margin-bottom: 50px;
+}
+#loginFormBottom{
+  display: flex;
+  width: 100%;
+}
+.imageBrand{
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid gray;
+}
+.imageBrand img{
+  width: 70%;
+}
+#loginForm{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#loginForm input {
+  width: 80%;
+  margin: 20px 0;
+  padding: 16px;
+  background-color: #F2F2F2;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 14px;
+}
+#loginForm button{
+  width: 45%;
+  padding: 15px;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: rgb(241, 59, 59);
+  color: white;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+#loginLinks{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+#loginLinks a{
+  width: 50%;
+  text-align: center;
+  border-right: 3px solid rgba(128, 128, 128, 0.511);
+}
+#loginLinks a:last-child{
+  border-right: none !important;
+}

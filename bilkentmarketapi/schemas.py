@@ -6,9 +6,11 @@ class UserLogin(BaseModel):
     email: str
     password: str
 
+
 class UserOut:
-    username:str
-    id:int
+    username: str
+    id: int
+
 
 class Token(BaseModel):
     access_token: str
@@ -17,8 +19,17 @@ class Token(BaseModel):
 
 class UserCreate(BaseModel):
     email: str
+    id:int
     password: str
     username: str
+    phone_num: str
+    name: str
+    school:str = "Bilkent University"
+    surname: str
+    city: str
+    subcity: str
+    department: str
+    grade: str
 
 
 class TokenData(BaseModel):
@@ -37,58 +48,51 @@ class ChangePsw(BaseModel):
     new_psw: str
     old_psw: str
 
+
 # CATEGORY
 class Category(BaseModel):
     name: str
     groupname: str
 
+
 class CategoryOut(BaseModel):
-    categoryname:str
-    id:int
+    categoryname: str
+    id: int
+
 
 class DeleteCategory(BaseModel):
-    id:int
-    groupname: str
+    id: int
 
 
 class CategoryUpdate(BaseModel):
     id: int
     name: Optional[str]
-    post_ids: Optional[List[int]]
 
 
-# GROUP
-class Group(BaseModel):
-    name: str
-    members: Optional[list] = []
-
-class JoinGroup(BaseModel):
-    invToken: str
-    groupName: str
+# OFFER
+class Offer(BaseModel):
+    item_id: int
+    price: int
 
 
-class HandleReq(BaseModel):
-    reqid: int
-    owner_id:int
-    is_accepted: bool
+class OfferRespond(BaseModel):
+    offer_id: int
+    respond: str
 
+
+class ReOffer(BaseModel):
+    offer_id: int
+    new_price: int
 
 
 # POST
-class PostOut(BaseModel):
-    filename: str
+class Item(BaseModel):
+    name: str
     description: str
-    owner_username: str
-    id: int
+    price: float
+    category_names: List[str]
 
 
-class AddToCategory(BaseModel):
-    post_ids: List[int]
-    category_id: int
-
-class CommentPost(BaseModel):
-    comment:str
-    groupname:str
-    
-class DeletePosts(BaseModel):
-    post_ids:List[int]
+class AddToCategories(BaseModel):
+    category_names: List[str]
+    item_id: int

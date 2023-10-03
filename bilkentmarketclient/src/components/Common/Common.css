@@ -1,0 +1,31 @@
+#classicNavbar {
+  height: 10vh;
+  background-color: #f1f1f1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 50px;
+  position: fixed;
+  top: 0;
+}
+.brand {
+  height: 100%;
+  width: 15%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.brand p {
+  font-weight: bold;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+.navButtons a:first-child{
+  margin-right: 30px;
+}
+.navButtons a{
+  font-weight: bold;
+  color: black;
+}
