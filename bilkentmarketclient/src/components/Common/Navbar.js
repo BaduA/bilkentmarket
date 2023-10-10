@@ -16,7 +16,7 @@ function Navbar() {
         <p>Bilkent Market</p>
       </div>
       <div className="navButtons">
-        <a href="/items">ITEMS</a>
+        <a href="/">ITEMS</a>
         <a href="/profile">PROFILE</a>
       </div>
     </div>

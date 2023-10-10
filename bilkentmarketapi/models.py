@@ -23,6 +23,8 @@ class Item(database.Base):
     )
     __tablename__ = "items"
     id = Column(Integer, primary_key=True)
+    images = relationship("Image")
+
     name = Column(String, nullable=False)
     description = Column(String, nullable=False)
     price = Column(Float, nullable=False)
@@ -71,7 +73,6 @@ class User(database.Base):
     surname = Column(String, nullable=False)
     rating = Column(Float, default=0)
     password = Column(String, nullable=False)
-    images = relationship("Image")
     buyed_items = relationship(
         "Item", back_populates="buyer", foreign_keys="Item.buyer_id"
     )
@@ -119,4 +120,3 @@ class Image(database.Base):
     id = Column(Integer, primary_key=True)
     filename = Column(String, nullable=False)
     item_id = Column(Integer, ForeignKey("items.id", ondelete="CASCADE"))
-

@@ -1,3 +1,13 @@
 {
-
+  "type": "service_account",
+  "project_id": "calm-athlete-392115",
+  "private_key_id": "743705d981d737dc7e6c93c0f8d7d4553f40aab8",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC1LPaoh6kBK2YF\n3uUfkncw80UpWfN7KPEMtSTKkOABaBvAFZKlPu7FBFvP6xiBzbLuAOEpRIvht/b3\nq31fgTaEjb1WOtOq0wQUlj7tBEBRZZVS/No2zDqQjxNFK8o6oEVeSdrfqfDZT2bU\nqtil6S728otHmbgbqo2GoiAufgrxpTczp3UZamY9UgJuo0uf1h6U9bnw8g9/FTHV\n4ojc4SlDRdFnY6HpYdZySpR5BiaL0MUvGPK7du2+JT1ULj4CCzupwjvFRy4Mubu7\n83ZBqx82ZOTdwkFfi/1t9Q7Wf6xllMn30qv12GpSoVkLafjlryFyQDHKR2Cq7hMI\nASkx8TTpAgMBAAECggEAH+NlGq6d+X24/EmKDG+MGQqIXsndSA0huDnd2uV69+Rq\nFfn2EK2t+vFUc5kOfDJHTwrKlqfg8v6dMmR1saydeuEztQyvmr5/VlxHgRIhe/Ik\nQTIN+l0h5bW5D5CwjHcPHpRjOMDBio4mLEJR1YngYUi5aQXOWNhBBrRcc7JtnLBJ\n73cHU0vHVp8PQX8dmTT8MYsnnzr6vlIyKbPTMF52xk4XJ7fJqWEveuXZXEYfe9xr\nH6Zr56Yn4urv9PGCAp2uIGuf6CohKmtPbFWFQ+IyjG0GWofslRS5YvyvW7SL3E+Z\nlr3J86VHnirAom5VmGVjMDuuDv9P0054dx80ulXEsQKBgQD8OKq4/emUQD/HWAXr\nDdtPd7L+jyO2KZX1fjzbfnQVaQWbBczRfKuuXoAiqBuR7jKkZFivoFSQexGeHOzw\nWzvQCPlbjz9AYCsUhJEEqHUTa7LsGI1/LpSMhPw5ZDUIV2TnfEbDCkKjtxqINdze\nU6uVZyAZEYBIiSrtC+hFGWWtdQKBgQC349F2ZBhi9/roif1WzEpzteBeEqENjy3G\nhTAqfZIufVpB1lPIKj71lezWqOnJdVbG4qQhgPSzZIahamaAGCLff0c8wwvqd04N\nSpVAzv9aJH+1chX/ADklJgCG9lJfrlLoce2todqMDTb9o3B5TCZPnpSr7/EtPwda\ngNITT683JQKBgQDNksJTlWDUXKmfKLdqJhkiZEWYBcLtrmdzeDjSDfc/nCHdgJS4\nCg1ESfHWTX5rKuJL6x39x4glWqm5XYohPbs6jJXxcofzSG7UglhQm50Q/y8OD9UE\nXErnXVzWyj4PVmv/4OMsBSjbl1oguwYSj8/CLhOTWxhcBrDeFF50M4cUIQKBgAHe\nZNCJL95BmuEmFdb9+Hu4i3EpS02x+Msdq2GjKQsj5vjoTq2oED+6qE9+I/ISKTGY\nOAbHIrV3/g5B4IzIsgIHbxfk+4gEclycN2wTLnEiEdIsOKEAxZPlEPhOJIQoZ1tJ\nXRr4nBn0QGzPbmMtLO5+NBCTPaYyD8cRrBDaLHOpAoGAGLhtlCATI7c1D+kjtNES\nWOauvElVZXPPAHqzCNfHXSVUo9Vb6ZJoHK8UveMMwZe8khaGdBrKkRHNCo8PEYhU\nqLmazk5Uwkh1c7AQ5UmIZDg0gLqiSx4R5gXJ66/o3XjkmaYVWUUpPWxE5byDtDJ4\nCuYqGfqwSo75ZRtLU6wOnS8=\n-----END PRIVATE KEY-----\n",
+  "client_email": "bilkentmarket-storage@calm-athlete-392115.iam.gserviceaccount.com",
+  "client_id": "103540481721464041746",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/bilkentmarket-storage%40calm-athlete-392115.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
 }

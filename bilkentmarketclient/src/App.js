@@ -6,6 +6,7 @@ import Register from "./components/Auth/Register";
 import Loading from "./components/CommonComponents/Loading";
 import AppLayout from "./AppLayout";
 import Homepage from "./components/Homepage/Homepage";
+import AddItem from "./components/Homepage/components/AddItem";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -27,6 +28,7 @@ function App() {
         <Route path="/loading" element={<Loading></Loading>} />
         <Route element={<AppLayout></AppLayout>}>
           <Route path="/" element={<Homepage></Homepage>}></Route>
+          <Route path="/additem" element={<AddItem></AddItem>}></Route>
           <Route path="*" element={<Homepage></Homepage>}></Route>
         </Route>
       </Routes>

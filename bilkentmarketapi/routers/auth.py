@@ -26,7 +26,7 @@ def login(
         if not user:
             user = (
                 db.query(models.User)
-                .filter(models.User.id == user_creds.username)
+                .filter(models.User.username == user_creds.username)
                 .first()
             )
             if not user:

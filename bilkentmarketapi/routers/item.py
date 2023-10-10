@@ -1,4 +1,6 @@
-from fastapi import status, HTTPException, Depends, APIRouter
+from typing import List
+from uuid import uuid4
+from fastapi import Form, UploadFile, status, HTTPException, Depends, APIRouter
 from utlils import selected_clmn
 import models
 import schemas
@@ -7,9 +9,14 @@ from sqlalchemy.orm import Session
 from utlils import hash, verify
 from . import oauth2
 from validate_email import validate_email
+import os
+from fastapi_gcs import FGCSUpload, FGCSGenerate, FGCSDelete
 
-router = APIRouter(prefix="/items", tags=["users"])
 
+router = APIRouter(prefix="/items", tags=["items"])
+os.environ[
+    "GOOGLE_APPLICATION_CREDENTIALS"
+] = r"gcs/calm-athlete-392115-743705d981d7.json"
 
 @router.get("/sell")
 def get_selling_items(
@@ -41,24 +48,43 @@ def get_items(
 
 
 @router.post("/", status_code=status.HTTP_201_CREATED)
-def create_item(
-    item: schemas.Item,
+async def create_item(
+    description: str = Form(""),
+    name: str = Form(...),
+    price: str = Form(...),
+    categorynames: List[str] = Form([]),
+    images: List[UploadFile] = Form(...),
     db: Session = Depends(database.get_db),
     current_user=Depends(oauth2.get_current_user),
 ):
+    print(categorynames)
     categories = []
-    for ctg in item.category_names:
+    for ctg in categorynames:
         categories.append(
             db.query(models.Category)
             .filter(models.Category.categoryname == ctg)
             .first()
         )
+    files = []
+    for image in images:
+        postname = uuid4().hex + ".jpg"
+        files.append(models.Image(filename=postname))
+        response = await FGCSUpload.file(
+            project_id="calm-athlete-392115",
+            bucket_name="bilkentmarketbucket",
+            file=image,
+            file_path=f"items/{name}",
+            maximum_size=2_097_152,
+            allowed_extension=["png", "jpg", "jpeg"],
+            file_name=postname,
+        )
     new_model = models.Item(
-        name=item.name,
-        description=item.description,
-        price=item.price,
+        name=name,
+        description=description,
+        price=price,
         seller=current_user,
         categories=categories,
+        images=files,
     )
     db.add(new_model)
     db.commit()
